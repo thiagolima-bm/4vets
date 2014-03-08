@@ -9,6 +9,6 @@ Acaldeira_Wholesaler.xml			app/etc/modules/Acaldeira_Wholesaler.xml
 code/Customer 						app/code/local/Acaldeira/Customer
 Acaldeira_Customer.xml              app/etc/modules/Acaldeira_Customer.xml
 
-design/frontend						app/design/base/default/
-design/adminhtml					app/design/default/default/
+design/frontend						app/design/frontend/base/default/
+design/adminhtml					app/design/adminhtml/default/default/
 lib									lib
