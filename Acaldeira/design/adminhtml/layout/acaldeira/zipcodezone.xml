@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <zipcodezone_adminhtml_zipcodezone_index>
+        <reference name="content">
+            <block type="zipcodezone/adminhtml_zipcodezone" name="zipcodezone" />
+        </reference>
+    </zipcodezone_adminhtml_zipcodezone_index>
+</layout>

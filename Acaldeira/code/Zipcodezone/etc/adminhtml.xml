@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config>
+  
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <zipcodezone module="zipcodezone">
+                        <title>zipcodezone</title>
+                        <sort_order>71</sort_order>               
+                        <children>
+                          
+                            <tables module="zipcodezone">
+                                <title>Manage Products</title>
+                                <sort_order>0</sort_order>
+                                <action>zipcodezone/adminhtml_zipcodezone</action>
+                            </tables>
+
+
+                        </children>
+                     </zipcodezone>
+                </children>
+            </admin>
+        </resources>   
+    </acl>
+    <layout>
+        <updates>
+            <zipcodezone>
+                <file>acaldeira/zipcodezone.xml</file>
+            </zipcodezone>
+        </updates>
+    </layout>
+
+
+</config>

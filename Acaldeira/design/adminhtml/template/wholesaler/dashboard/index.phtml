@@ -1,0 +1,51 @@
+<?php
+$user = Mage::getSingleton('admin/session');
+$userId = $user->getUser()->getUserId();
+
+$wholesaler  = Mage::getModel('wholesaler/wholesaler')->load($userId,'user_id');
+$wholesalerModel  = Mage::getModel('wholesaler/company')->load($wholesaler->getId(),'wholesaler_id');
+
+
+
+?>
+
+<div class="container">
+	<div class="row">
+		<div class="span6">
+			<div class="widget">
+				<div class="widget-header"><i class="icon-list-alt"></i><h3><?php echo Mage::helper('wholesaler')->__('wholesaler Details');?></h3></div>
+				<div class="widget-content fixed-height">
+					<ul>
+						
+						<li><strong><?php echo Mage::helper('wholesaler')->__('Corporate Name');?>:</strong>
+							<?php echo $wholesalerModel->getCorporateName();?>
+						</li>
+						<li><strong><?php echo Mage::helper('wholesaler')->__('CNPJ');?>:</strong>
+							<?php echo $wholesalerModel->getCnpj();?>
+						</li>
+						<li><strong><?php echo Mage::helper('wholesaler')->__('Owner Name');?>:</strong>
+							<?php echo $wholesalerModel->getOwnerName();?>
+						</li>
+						<li><strong><?php echo Mage::helper('wholesaler')->__('CPF');?>:</strong>
+							<?php echo $wholesalerModel->getCpf();?>
+						</li>
+						<li><strong><?php echo Mage::helper('wholesaler')->__('RG');?>:</strong>
+							<?php echo $wholesalerModel->getRg();?>
+						</li>
+						<li><strong><?php echo Mage::helper('wholesaler')->__('Address');?>:</strong>
+							<?php echo $wholesalerModel->getAddress();?>
+						</li>
+						<li><strong><?php echo Mage::helper('wholesaler')->__('CEP');?>:</strong>
+							<?php echo $wholesalerModel->getCep();?>
+						</li>
+						<li><strong><?php echo Mage::helper('wholesaler')->__('Email');?>:</strong>
+							<?php echo $wholesalerModel->getEmail();?>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

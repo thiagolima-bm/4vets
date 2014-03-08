@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<config>
+	<menu>
+		<wholesaler module="wholesaler">
+			<title>Wholesaler</title>
+			<sort_order>71</sort_order>
+			<children>
+
+				<wholesaler_companies>
+					<title>Manage Wholesaler</title>
+					<sort_order>0</sort_order>
+					<action>wholesaler/adminhtml_wholesaler/index</action>
+				</wholesaler_companies>
+				
+				<dashboard module="wholesaler">
+					<title>Dashboard</title>
+					<sort_order>1</sort_order>
+					<action>wholesaler/adminhtml_wholesaler/dashboard</action>
+				</dashboard>	
+
+				<catalog module="wholesaler">
+					<title>Products</title>
+					<sort_order>1</sort_order>
+					<action>wholesaler/adminhtml_catalog_product/index</action>
+				</catalog>	
+
+				<orders module="wholesaler">
+					<title>Manage Orders</title>
+					<sort_order>3</sort_order>
+					<action>wholesaler/adminhtml_wholesaler/orders</action>
+				</orders>
+
+			</children>
+		</wholesaler>
+	</menu>
+	<acl>
+		<resources>
+			<all>
+				<title>Allow Everything</title>
+			</all>
+			<admin>
+				<children>
+
+					<wholesaler module="wholesaler">
+						<title>Wholesaler</title>
+						<sort_order>71</sort_order>
+						<children>
+
+							<wholesaler_companies module="wholesaler">
+								<title>Manage Companies</title>
+								<sort_order>0</sort_order>
+								<action>wholesaler/adminhtml_wholesaler/index</action>
+							</wholesaler_companies>
+							
+							<dashboard module="wholesaler">
+								<title>Dashboard</title>
+								<sort_order>1</sort_order>
+								<action>wholesaler/adminhtml_wholesaler/dashboard</action>
+							</dashboard>			
+
+
+							<catalog module="wholesaler">
+								<title>Products</title>
+								<sort_order>2</sort_order>
+								<action>wholesaler/adminhtml_catalog_product/index</action>
+							</catalog>	
+
+							<orders module="wholesaler">
+								<title>Manage Orders</title>
+								<sort_order>3</sort_order>
+								<action>wholesaler/adminhtml_wholesaler/orders</action>
+							</orders>
+						</children>
+					</wholesaler>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+
+	<layout>
+		<updates>
+			<wholesaler>
+				<file>acaldeira/wholesaler.xml</file>
+			</wholesaler>
+		</updates>
+	</layout>
+
+</config>

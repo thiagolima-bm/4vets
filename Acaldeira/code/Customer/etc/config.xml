@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Acaldeira_Customer>
+			<version>1.0.2</version>
+		</Acaldeira_Customer>
+	</modules>
+	
+     <frontend> 
+        <routers>
+            <customer>
+                <args>
+                    <modules>
+                        <acaldeira_customer before="Mage_Customer">Acaldeira_Customer</acaldeira_customer>
+                    </modules>
+                </args>
+            </customer>
+        </routers>
+    </frontend>
+   </config>	
