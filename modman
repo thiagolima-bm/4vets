@@ -6,3 +6,4 @@ Acaldeira_Wholesaler.xml			app/etc/modules/Acaldeira_Wholesaler.xml
 Acaldeira_Zipcodezone.xml			app/etc/modules/Acaldeira_Zipcodezone.xml
 design/frontend						app/design/base/default/
 design/adminhtml					app/design/default/default/
+lib									lib
