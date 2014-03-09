@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Acaldeira_Zipcodezone>
-			<version>0.1.0</version>
+			<version>0.1.2</version>
 		</Acaldeira_Zipcodezone>
 	</modules>
 	<frontend>
@@ -42,7 +42,7 @@
 	<adminhtml>
 		<menu>
 			<zipcodezone translate="title" module="zipcodezone">
-				<title>zipcodezone</title>
+				<title>Zip Code Zone</title>
 				<sort_order>71</sort_order>
 				<children>
 
