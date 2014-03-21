@@ -28,8 +28,8 @@ $setup->addAttribute('customer', 'zipcodezone', array(
 			'position' => 1,
 			'required'=> 1,
 			'label' => 'Zone',
-			'type' => 'varchar',
-			'input'=>'text',
+			'type' => 'int',
+			'input'=>'multiselect',
 			'apply_to'=>'simple,bundle,grouped,configurable',
 			'note'=>'Produc Zone'
 	);
