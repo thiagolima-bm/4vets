@@ -8,7 +8,21 @@ class Acaldeira_wholesaler_Block_Adminhtml_wholesaler_Company_Edit_Tab_Wholesale
         $this->setForm($form);
         $fieldset = $form->addFieldset('company_shipping', array('legend'=>Mage::helper('wholesaler')->__('Wholesaler configuration')));
 
+        $availableZones  = Mage::getModel('zipcodezone/zipcodezone')->getCollection();
 
+        $zones = array();
+        foreach ($availableZones as $zone){
+            array_push($zones,array(
+                'value' => $zone->getId(),
+                'label' => $zone->getZonename(),
+                ));
+        }
+        $fieldset->addField('zipcodezone', 'multiselect', array(
+            'label'     => Mage::helper('wholesaler')->__('Zip Code Zones'),
+            'name'      => 'zipcodezone',
+            'values'    => $zones,
+            'required'  => true,
+        ));
 
         $availableMethods = Mage::getModel('mailtable/mailtable')->getCollection()->addFieldToFilter('active', array('=' => '1'));
        

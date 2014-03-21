@@ -127,7 +127,7 @@ class Acaldeira_Wholesaler_Block_Adminhtml_Catalog_Product_Grid extends Mage_Adm
  
     public function getRowUrl($row)
     {
-        return $this->getUrl('*/*/editProduct', array('id' => $row->getId()));
+        return $this->getUrl('wholesaler/adminhtml_wholesaler/associateProducts', array('id' => $row->getId()));
     }
  
     public function getGridUrl()

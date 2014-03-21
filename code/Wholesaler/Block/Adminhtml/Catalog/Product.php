@@ -10,6 +10,12 @@ class Acaldeira_Wholesaler_Block_Adminhtml_Catalog_Product extends Mage_Adminhtm
        
         $this->_addButtonLabel = Mage::helper('wholesaler')->__('Add Product');
 
+        $this->addButton('export_products', array(
+            'label'     => Mage::helper('wholesaler')->__('Associate Products'),
+            'onclick'   => 'setLocation(\'' . $this->getUrl('wholesaler/adminhtml_wholesaler/associateProducts') . '\')',
+            'class'     => 'goback'
+        ));
+
         parent::__construct();
     }
 }
