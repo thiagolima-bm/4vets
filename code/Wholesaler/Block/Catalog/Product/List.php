@@ -57,18 +57,28 @@ class Acaldeira_Wholesaler_Block_Catalog_Product_List extends Mage_Catalog_Block
             }
             
 
-            $vendorCollection = Mage::getModel('catalog/category')->getCollection()
-            ->addAttributeToSelect('entity_id')
-            ->addFieldToFilter('zone', array('=' => Bm_Cmon::getZipcodezone()));
+            $vendorCollection = Mage::getModel('catalog/product')->getCollection()
+            ->addAttributeToSelect('*')
+            ->addFieldToFilter('zone', array('=' => Bm_Cmon::getZipcodezone()))
+            ->addFieldToFilter('storecode', array('neq' => Bm_Cmon::getCatalogCode()))
+            ->addFieldToFilter('psku', array('neq' => null));
 
             $entity_ids = array();
 
+
             foreach($vendorCollection as $p)
-                array_push($entity_ids, $p->getId());
+                array_push($entity_ids, $p->getPsku());
+
+            $in = implode(",",$entity_ids);
+
             
             $this->_productCollection = $layer->getProductCollection()
-            ->addFieldToFilter('entity_id', array('IN' => $entity_ids));
+            ->addAttributeToSelect('*')
+            ->addFieldToFilter('storecode', array('eq' => Bm_Cmon::getCatalogCode()))
+            ->addFieldToFilter('sku', array('in' => array($in)));
             
+         
+
             $this->prepareSortableFieldsByCategory($layer->getCurrentCategory());
 
             if ($origCategory) {
