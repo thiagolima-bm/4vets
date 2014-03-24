@@ -157,7 +157,7 @@
     </wholesaler_adminhtml_wholesaler_vieworder>
 -->
 
-    <wholesaler_adminhtml_catalog_product_new>
+    <wholesaler_adminhtml_wcatalog_product_new>
 		<update handle="editor" />
 		<reference name="content">
 			<block type="wholesaler/adminhtml_catalog_product_edit" name="product_edit"></block>
@@ -170,7 +170,7 @@
 				name="catalog_product_js"></block>
 			<block type="core/template" template="catalog/wysiwyg/js.phtml" />
 		</reference>
-	</wholesaler_adminhtml_catalog_product_new>
+	</wholesaler_adminhtml_wcatalog_product_new>
 
     <wholesaler_index_adminhtml_catalog_product_editproduct>
        
@@ -195,11 +195,11 @@
         </block>
     </wholesaler_index_adminhtml_catalog_product_categories>
 
-    <wholesaler_index_adminhtml_catalog_product_index>
+    <wholesaler_index_adminhtml_wcatalog_product_index>
         <reference name="content">
              <block type="wholesaler/adminhtml_catalog_product" name="wholesaler" />
         </reference>
-    </wholesaler_index_adminhtml_catalog_product_index>
+    </wholesaler_index_adminhtml_wcatalog_product_index>
 
 
 
