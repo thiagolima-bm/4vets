@@ -34,6 +34,8 @@ class Acaldeira_Wholesaler_Adminhtml_Catalog_ProductController extends Mage_Admi
     public function editProductAction()
     {
 
+        $this->_redirect('wholesaler/adminhtml_wholesaler/associateProducts');
+
         $product = $this->_initProduct();
 
         $this->loadLayout();

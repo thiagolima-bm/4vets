@@ -11,6 +11,30 @@ class Acaldeira_Wholesaler_Block_Adminhtml_Wholesaler_Newproduct_Tab_Form extend
         $product = Mage::registry('wholesaler_data');
         $is_new = $this->getRequest()->getParam('id') == '';
 
+        $zones = str_replace("|",",",Bm_Cmon::getZipcodezone());    
+       
+        $zoneCollection = Mage::getModel('zipcodezone/zipcodezone')->getCollection();
+       
+        $zoneCollection->getSelect()->where("zipcodezone_id IN ($zones)");
+       
+        $values = array();
+
+        foreach($zoneCollection as $zone)
+        {
+            array_push($values,array('value'=>$zone->getId(),'label'=>$zone->getZonename()));
+
+            
+        }
+
+        $fieldset->addField('zone', 'select', array(
+            'label'     => Mage::helper('zipcodezone')->__('Zone'),
+            'name'      => 'zone',
+            'required'  => true,
+            'note'      => Mage::helper('zipcodezone')->__('Product Zone'),
+            'values'    => $values,
+            'value'     => $product->getZone(),
+        ));
+
         $eanfield = $fieldset->addField('psku', 'text', array(
             'label'     => Mage::helper('wholesaler')->__('Sku'),
             'class'     => ($is_new ? 'appender' : 'disabled'),
@@ -82,6 +106,8 @@ class Acaldeira_Wholesaler_Block_Adminhtml_Wholesaler_Newproduct_Tab_Form extend
             ),
         ));
 
+        
+
         $preview = '';
 
         if (!$is_new) {
@@ -111,6 +137,7 @@ class Acaldeira_Wholesaler_Block_Adminhtml_Wholesaler_Newproduct_Tab_Form extend
                 });
 
                 jq('#search-product').click(function(){
+                    var zone = jq('#zone').val();
                     var ean_check = jq('#psku').val();
                     var ean_check_size = jq('#psku').val().length;
 
@@ -125,7 +152,7 @@ class Acaldeira_Wholesaler_Block_Adminhtml_Wholesaler_Newproduct_Tab_Form extend
                     jq.ajax({
                         type: \"json\",
                         url: \"".$this->getUrl('*/*/ajaxFindProduct')."psku\/\"+ean_check,
-                        data: { psku: ean_check }
+                        data: { psku: ean_check, zone: zone }
                     }).done(function(msg) {
                         console.log(msg);
 

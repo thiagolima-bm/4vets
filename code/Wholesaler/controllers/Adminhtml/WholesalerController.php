@@ -258,6 +258,8 @@ class Acaldeira_Wholesaler_Adminhtml_WholesalerController extends Mage_Adminhtml
 
         $this->_initAction();
 
+        $this->_checkZone();
+
 
 
         if($this->getRequest()->getParam('id') != ""){
@@ -479,6 +481,22 @@ class Acaldeira_Wholesaler_Adminhtml_WholesalerController extends Mage_Adminhtml
             }
 
         }
+
+    }
+
+
+    public function _checkZone()
+    {
+        // if(!Mage::registry('zone'))
+        //     $this->_redirect('*/*/registerZone');
+ 
+
+    }
+
+    public function registerZoneAction()
+    {
+
+        
 
     }
 
