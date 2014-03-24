@@ -21,7 +21,7 @@
 				<catalog module="wholesaler">
 					<title>Products</title>
 					<sort_order>1</sort_order>
-					<action>wholesaler/adminhtml_catalog_product/index</action>
+					<action>wholesaler/adminhtml_wcatalog_product/index</action>
 				</catalog>	
 
 				<orders module="wholesaler">
