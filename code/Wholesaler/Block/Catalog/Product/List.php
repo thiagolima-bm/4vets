@@ -67,15 +67,13 @@ class Acaldeira_Wholesaler_Block_Catalog_Product_List extends Mage_Catalog_Block
 
 
             foreach($vendorCollection as $p)
-                array_push($entity_ids, $p->getPsku());
-
-            $in = implode(",",$entity_ids);
+                $entity_ids[$p->getPsku()] = $p->getPsku();
 
             
             $this->_productCollection = $layer->getProductCollection()
             ->addAttributeToSelect('*')
             ->addFieldToFilter('storecode', array('eq' => Bm_Cmon::getCatalogCode()))
-            ->addFieldToFilter('sku', array('in' => array($in)));
+            ->addFieldToFilter('sku', array('in' => $entity_ids));
             
          
 
