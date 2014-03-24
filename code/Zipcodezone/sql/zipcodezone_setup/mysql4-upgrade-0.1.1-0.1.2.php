@@ -7,7 +7,7 @@ $installer->startSetup();
 $installer->run("
  
 
-ALTER TABLE  `wholesaler` ADD  `zipcodezone` INT( 10 ) NOT NULL;
+ALTER TABLE  `wholesaler` ADD  `zipcodezone` VARCHAR( 100 ) NOT NULL;
  
 
 ");
