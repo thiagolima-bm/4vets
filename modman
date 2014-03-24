@@ -12,3 +12,4 @@ Acaldeira_Customer.xml              app/etc/modules/Acaldeira_Customer.xml
 design/frontend						app/design/frontend/base/default/
 design/adminhtml					app/design/adminhtml/default/default/
 lib									lib
+skin								skin
