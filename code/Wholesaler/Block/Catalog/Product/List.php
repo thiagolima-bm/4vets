@@ -55,8 +55,20 @@ class Acaldeira_Wholesaler_Block_Catalog_Product_List extends Mage_Catalog_Block
                     $this->addModelTags($category);
                 }
             }
-            $this->_productCollection = $layer->getProductCollection()->addFieldToFilter('zone', array('=' => Bm_Cmon::getZipcodezone()));
+            
 
+            $vendorCollection = Mage::getModel('catalog/category')->getCollection()
+            ->addAttributeToSelect('entity_id')
+            ->addFieldToFilter('zone', array('=' => Bm_Cmon::getZipcodezone()));
+
+            $entity_ids = array();
+
+            foreach($vendorCollection as $p)
+                array_push($entity_ids, $p->getId());
+            
+            $this->_productCollection = $layer->getProductCollection()
+            ->addFieldToFilter('entity_id', array('IN' => $entity_ids));
+            
             $this->prepareSortableFieldsByCategory($layer->getCurrentCategory());
 
             if ($origCategory) {
