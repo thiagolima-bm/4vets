@@ -469,7 +469,7 @@ class Acaldeira_Wholesaler_Adminhtml_WholesalerController extends Mage_Adminhtml
                 Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('Item was successfully saved'));
                 Mage::getSingleton('adminhtml/session')->setWholesalerData(false);
 
-                $this->_redirect('*/*/');
+                $this->_redirect('*/adminhtml_wcatalog_product/');
                 return;
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
