@@ -452,6 +452,8 @@ class Acaldeira_Wholesaler_Adminhtml_WholesalerController extends Mage_Adminhtml
                 if(isset($postData['product']['group_price']))
                     $product->setData('group_price',$postData['product']['group_price']);
 
+                $product->setZone($postData['zone']);
+
 
                 // $transaction = Mage::getModel('core/resource_transaction');
         
