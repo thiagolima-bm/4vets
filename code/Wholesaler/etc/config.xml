@@ -94,7 +94,7 @@
                 <use>admin</use>
                 <args>
                     <module>Acaldeira_Wholesaler</module>
-                    <frontName>wholesaler_catalog</frontName>
+                    <frontName>wholesaler_wcatalog</frontName>
                 </args>
             </wholesaler_catalog>
 		</routers>

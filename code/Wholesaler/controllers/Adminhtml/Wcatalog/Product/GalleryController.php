@@ -2,7 +2,7 @@
 
 include_once "Mage/Adminhtml/controllers/Catalog/Product/GalleryController.php";
 
-class Acaldeira_Wholesaler_Adminhtml_Catalog_Product_GalleryController extends Mage_Adminhtml_Catalog_Product_GalleryController
+class Acaldeira_Wholesaler_Adminhtml_Wcatalog_Product_GalleryController extends Mage_Adminhtml_Catalog_Product_GalleryController
 {
 	public function uploadAction()
     {

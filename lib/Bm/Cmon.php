@@ -12,7 +12,7 @@ class Bm_Cmon{
 
 	const INVOICED_STATE = 'paid';
 	
-	private static $catalogCode = '4vets';
+	private static $catalogCode = 'catalog4vets';
 
 	private static $financingTimes = 10;
 	

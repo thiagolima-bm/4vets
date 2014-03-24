@@ -1,6 +1,6 @@
 <?php
 include_once "Mage/Adminhtml/controllers/Catalog/ProductController.php";
-class Acaldeira_Wholesaler_Adminhtml_Catalog_ProductController extends Mage_Adminhtml_Catalog_ProductController
+class Acaldeira_Wholesaler_Adminhtml_Wcatalog_ProductController extends Mage_Adminhtml_Catalog_ProductController
 {
 
 
